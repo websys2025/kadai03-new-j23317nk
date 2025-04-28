@@ -23,7 +23,10 @@
                 console.log("商品は以下の" + items.length + "種類です。");
 
                 // 配列の内容を項目毎に出力
-                // ここにコードを書く
+                for (let i in items){// ここにコードを書く
+                    let it = items[i];
+                    console.log("商品番号: "+it.id+", "+"商品名: "+it.name+", "+"金額: "+it.price+", "+"在庫数: "+it.stock);
+                }
                 console.log(""); // 空行の出力
             }
 

@@ -32,7 +32,20 @@
 
             // 商品購入の関数
             function buyItem(no) {
-                // ここにコードを書く
+                if (no<1 || no>items.length){// ここにコードを書く
+                    console.log(no+"は範囲外です。違う番号を選択してください");
+                    console.log("");
+                    return;
+                }
+
+                let it = items[no - 1];
+                if (it.stock>0){
+                    it.stock--;
+                    console.log("商品番号: "+it.id+", "+"商品名: "+it.name+"を購入します");
+                }else {
+                    console.log("商品番号: "+it.id+", "+"商品名: "+it.name+"を購入します");
+                    console.log("在庫がありません。");
+                }
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
